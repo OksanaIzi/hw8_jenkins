@@ -9,7 +9,7 @@ import static com.codeborne.selenide.Selenide.$;
 import static com.codeborne.selenide.Selenide.open;
 import static io.qameta.allure.Allure.step;
 
-public class StudentRegistrationFormTests {
+public class StudentRegistrationFormTests extends TestBase {
 
     Faker faker = new Faker();
 
@@ -89,7 +89,7 @@ public class StudentRegistrationFormTests {
                     text(hobby1),
                     text(picture),
                     text(currentAddress),
-                    text(state + " " + city));
+                    text(state + " error " + city));
         });
     }
 }
