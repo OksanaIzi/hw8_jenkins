@@ -8,6 +8,7 @@ import org.openqa.selenium.remote.DesiredCapabilities;
 
 import java.util.Map;
 
+import static com.codeborne.selenide.Selenide.closeWebDriver;
 import static com.codeborne.selenide.logevents.SelenideLogger.addListener;
 import static helpers.AttachmentHelper.*;
 import static helpers.AttachmentHelper.getConsoleLogs;
@@ -30,5 +31,6 @@ public class TestBase {
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
         attachVideo();
+        closeWebDriver();
     }
 }
