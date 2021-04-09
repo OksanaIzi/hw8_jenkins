@@ -15,7 +15,7 @@ import static helpers.AttachmentHelper.getConsoleLogs;
 public class TestBase {
 
     @BeforeAll
-    static void setup(){
+    static void setup() {
         addListener("AllureSelenide", new AllureSelenide());
         DesiredCapabilities capabilities = new DesiredCapabilities();
         capabilities.setCapability("enableVNC", true);
@@ -25,9 +25,10 @@ public class TestBase {
     }
 
     @AfterEach
-    void afterEach(){
+    void afterEach() {
         attachScreenshot("Last screenshot");
         attachPageSource();
         attachAsText("Browser console logs", getConsoleLogs());
+        attachVideo();
     }
 }
