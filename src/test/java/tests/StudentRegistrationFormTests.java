@@ -150,8 +150,8 @@ public class StudentRegistrationFormTests extends TestBase {
                     text(dayOfBirth + " " + monthOfBirth + "," + yearOfBirth),
                     text(hobby1),
                     text(picture),
-                    text(currentAddress),
-                    text(state + " error " + city));
+                    text(currentAddress));
+            $(".modal-content").shouldNotHave(text(state + " error " + city));
         });
     }
 }
